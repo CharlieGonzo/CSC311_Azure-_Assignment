@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+    register.fxml — Registration Screen
+    Controller: RegisterController
+
+    Layout:
+      Outer StackPane fills the full window with the gradient background.
+      Inner VBox is the centred white card containing:
+        - Title and subtitle
+        - Name fields (First Name, Last Name)
+        - Account fields (Email, Username)
+        - Password fields (Password + Confirm Password)
+        - "Create Account" button — shows success dialog and returns to login
+        - "Back to Login" link
+
+    Note: Registration is UI-only for this lab — no data is written to the database.
+-->
+<StackPane
+        prefHeight="535.0" prefWidth="850.0"
+        styleClass="login-background"
+        xmlns="http://javafx.com/javafx/20.0.1"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.module03_basicgui_db_interface.RegisterController">
+
+   <stylesheets>
+      <URL value="@styling/style.css"/>
+   </stylesheets>
+
+   <children>
+      <!-- ── Centred registration card ─────────────────────────────── -->
+      <VBox alignment="CENTER" spacing="11.0"
+            maxWidth="370.0" styleClass="login-card">
+
+         <padding>
+            <Insets top="25.0" right="30.0" bottom="25.0" left="30.0"/>
+         </padding>
+
+         <children>
+            <!-- Page header -->
+            <Label styleClass="login-title" text="Create Account"/>
+            <Label styleClass="login-subtitle" text="Register to use Person Database"/>
+
+            <!-- Personal information -->
+            <TextField fx:id="firstNameField" promptText="First Name"
+                       maxWidth="Infinity"/>
+
+            <TextField fx:id="lastNameField" promptText="Last Name"
+                       maxWidth="Infinity"/>
+
+            <!-- Account information -->
+            <TextField fx:id="emailField" promptText="Email Address"
+                       maxWidth="Infinity"/>
+
+            <TextField fx:id="usernameField" promptText="Username"
+                       maxWidth="Infinity"/>
+
+            <!-- Password setup -->
+            <PasswordField fx:id="passwordField" promptText="Password"
+                           maxWidth="Infinity"/>
+
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"
+                           maxWidth="Infinity"/>
+
+            <!-- Primary action: "register" validates passwords and returns to login -->
+            <Button fx:id="registerBtn" styleClass="login-btn"
+                    text="Create Account" onAction="#register"
+                    maxWidth="Infinity"/>
+
+            <!-- Secondary action: go back without registering -->
+            <Button styleClass="link-btn"
+                    text="Already have an account?  Login"
+                    onAction="#goToLogin"/>
+
+         </children>
+      </VBox>
+   </children>
+
+</StackPane>
