@@ -118,13 +118,13 @@ public class DatabaseHandler {
                         rs.getString("department"),
                         rs.getString("major")
                 ));
+                System.out.println(results.get(results.size()-1));
             }
 
         } catch (SQLException e) {
             System.err.println("List users error: " + e.getMessage());
             e.printStackTrace();
-        }
-
+        };
         return results;
     }
 

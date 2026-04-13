@@ -12,6 +12,16 @@ public class Person {
     public Person() {
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dept='" + dept + '\'' +
+                ", major='" + major + '\'' +
+                '}';
+    }
 
     public Person(Integer id, String firstName, String lastName, String dept, String major) {
         this.id = id;
