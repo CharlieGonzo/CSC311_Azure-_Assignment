@@ -19,9 +19,9 @@ import java.util.List;
 public class DatabaseHandler {
 
     // Azure MySQL connection details
-    private static final String DB_URL  = "jdbc:mysql://csc311charlie.mysql.database.azure.com:3306/mydb?useSSL=true";
-    private static final String USERNAME = "deleteme";
-    private static final String PASSWORD = "Pa55w0rd";
+    private static final String DB_URL  = "";
+    private static final String USERNAME = "";
+    private static final String PASSWORD = "";
 
     /**
      * Connects to the database and creates the 'person' table if it does not exist.
